@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="TripNest 是一座可持續擴充的個人旅行指南庫，收藏京都、大阪、福岡等城市的景點、美食、交通與行程靈感。">
+    <meta name="theme-color" content="#18332c">
+    <title>TripNest — 個人旅行指南庫</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/shared.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">跳到主要內容</a>
+    <header class="site-header" data-header>
+      <a class="brand" href="index.html" aria-label="TripNest 首頁">
+        <span class="brand-mark" aria-hidden="true">T</span>
+        <span class="brand-text">TripNest<span>.</span></span>
+      </a>
+      <nav class="site-nav" aria-label="主要導覽">
+        <a href="#destinations">目的地</a>
+        <a href="#how-it-works">旅行方式</a>
+        <a href="#about">關於本站</a>
+      </nav>
+      <a class="header-action" href="#destinations">開始探索 <span aria-hidden="true">↘</span></a>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="eyebrow"><span>01</span> YOUR PERSONAL TRAVEL LIBRARY</div>
+          <h1 id="hero-title">把想去的地方，<br><em>收進旅行裡。</em></h1>
+          <p class="hero-lede">從街區散步到一碗在地滋味，TripNest 用一致、好讀的指南，替下一段日本旅程留下清楚的入口。</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#destinations">探索目的地 <span aria-hidden="true">→</span></a>
+            <a class="text-link" href="#how-it-works">看看我們怎麼整理 <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="hero-note" aria-label="TripNest 特色">
+            <span class="hero-note-icon" aria-hidden="true">⌖</span>
+            <p><strong>慢慢走，記得深一點。</strong><br>為自由行旅人整理的城市筆記。</p>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="京都伏見稻荷大社鳥居景色">
+          <div class="hero-photo" role="img" aria-label="京都伏見稻荷大社層疊的朱紅鳥居"></div>
+          <div class="hero-stamp" aria-hidden="true">
+            <span>TRAVEL</span>
+            <strong>旅</strong>
+            <span>JOURNAL</span>
+          </div>
+          <div class="hero-caption">
+            <span>35.0116° N</span>
+            <span>135.7681° E</span>
+          </div>
+          <div class="hero-index" aria-hidden="true">旅<br>行<br>誌</div>
+        </div>
+        <a class="scroll-cue" href="#destinations" aria-label="向下捲動到目的地">SCROLL <span aria-hidden="true">↓</span></a>
+      </section>
+
+      <section class="marquee" aria-label="網站特色">
+        <div class="marquee-track">
+          <span>城市靈感</span><i>✦</i><span>路線提案</span><i>✦</i><span>在地滋味</span><i>✦</i><span>安心筆記</span><i>✦</i><span>城市靈感</span><i>✦</i><span>路線提案</span><i>✦</i><span>在地滋味</span><i>✦</i><span>安心筆記</span>
+        </div>
+      </section>
+
+      <section class="library-section" id="destinations" aria-labelledby="destinations-title">
+        <div class="section-heading library-heading">
+          <div>
+            <div class="eyebrow"><span>02</span> EXPLORE DESTINATIONS</div>
+            <h2 id="destinations-title">下一站，<em>去哪裡？</em></h2>
+          </div>
+          <p>從古都寺院到海港夜色，每座城市都有自己的步調。先選一種心情，再讓旅程慢慢成形。</p>
+        </div>
+
+        <div class="discovery-panel" aria-label="搜尋與篩選目的地">
+          <label class="search-field" for="search-input">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <span class="visually-hidden">搜尋目的地</span>
+            <input id="search-input" type="search" placeholder="搜尋城市、地區或旅行主題…" autocomplete="off">
+            <kbd>/</kbd>
+          </label>
+          <div class="filter-row">
+            <div class="filter-group" aria-label="依地區篩選" data-region-filters></div>
+            <label class="sort-control" for="sort-select">
+              <span>排序</span>
+              <select id="sort-select">
+                <option value="featured">精選順序</option>
+                <option value="city">城市名稱</option>
+                <option value="updated">最近更新</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="result-meta" aria-live="polite">
+          <p>找到 <strong data-result-count>0</strong> 座目的地</p>
+          <span class="result-line" aria-hidden="true"></span>
+        </div>
+
+        <div class="destination-grid" data-destination-grid aria-busy="true"></div>
+
+        <div class="empty-state" data-empty-state hidden>
+          <span aria-hidden="true">⌁</span>
+          <h3>這條路上還沒有目的地</h3>
+          <p>換個關鍵字，或清除篩選重新出發。</p>
+          <button class="button button-primary" type="button" data-reset-filters>清除篩選</button>
+        </div>
+
+        <div class="load-state" data-load-state role="status">
+          <span class="loader" aria-hidden="true"></span>
+          <p>正在打開旅行地圖…</p>
+        </div>
+      </section>
+
+      <section class="method-section" id="how-it-works" aria-labelledby="method-title">
+        <div class="method-intro">
+          <div class="eyebrow eyebrow-light"><span>03</span> TRAVEL, YOUR WAY</div>
+          <h2 id="method-title">不只是清單，<br>是一份能帶著走的<em>城市筆記。</em></h2>
+          <p>我們把每座城市整理成相同的閱讀路徑，讓你更快找到方向，也保留臨時轉彎的自由。</p>
+        </div>
+        <ol class="method-list">
+          <li>
+            <span class="method-number">01</span>
+            <div><h3>先認識城市</h3><p>掌握區域性格、適合天數與旅行節奏。</p></div>
+            <span class="method-symbol" aria-hidden="true">東</span>
+          </li>
+          <li>
+            <span class="method-number">02</span>
+            <div><h3>找到你的主題</h3><p>從文化、美食、海港或都會展開探索。</p></div>
+            <span class="method-symbol" aria-hidden="true">味</span>
+          </li>
+          <li>
+            <span class="method-number">03</span>
+            <div><h3>帶走一條路線</h3><p>用三日提案起步，再依自己的步調調整。</p></div>
+            <span class="method-symbol" aria-hidden="true">路</span>
+          </li>
+        </ol>
+      </section>
+
+      <section class="about-section" id="about" aria-labelledby="about-title">
+        <div class="about-number" aria-hidden="true">04</div>
+        <div class="about-copy">
+          <div class="eyebrow"><span>04</span> BUILT TO GROW</div>
+          <h2 id="about-title">一套規則，<br><em>持續長大的旅行庫。</em></h2>
+          <p>TripNest 以共用頁面模板與結構化 JSON 管理內容。新增城市不必重做版面，AI 只要依循 <code>AGENTS.md</code> 的資料、查證與測試規則，就能維持一致品質。</p>
+          <a class="text-link" href="AGENTS.md">閱讀專案規範 <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="about-card">
+          <span class="about-card-label">LIBRARY STATUS</span>
+          <strong data-total-destinations>—</strong>
+          <span>DESTINATIONS</span>
+          <div class="about-card-rule"></div>
+          <p>One template.<br>Endless journeys.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <span class="brand-text">TripNest<span>.</span></span>
+        <p>探索世界，收藏每一段旅程。</p>
+      </div>
+      <div class="footer-links">
+        <a href="#destinations">目的地</a>
+        <a href="README.md">專案說明</a>
+        <a href="AGENTS.md">AGENTS.md</a>
+      </div>
+      <p class="footer-meta">© <span data-current-year></span> TripNest · Travel information reviewed <span data-latest-update>—</span></p>
+    </footer>
+  </body>
+</html>
