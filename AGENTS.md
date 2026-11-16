@@ -182,7 +182,7 @@ Every change must satisfy the applicable checks:
 ## 11. Deployment
 
 - The production branch is `main`.
-- GitHub Pages publishes the repository root through the included Pages workflow.
+- GitHub Pages publishes the `main` branch root; the included GitHub Actions workflow validates the site on every push.
 - Before publishing, confirm `git status`, run validation, and make sure only intended files are committed.
 - After publishing, open both the repository and deployed site URLs. Test at least one destination query URL on the deployed site.
 - Never place credentials in repository files or command output.
