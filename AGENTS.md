@@ -1,24 +1,24 @@
 # AGENTS.md — TripNest
 
-## 1. Project mission
+## 1. 專案使命
 
-TripNest is a Traditional Chinese personal travel-guide library. It turns every destination into the same dependable guide: orientation, highlights, food, transport, a sample itinerary, practical notes, and source links.
+TripNest 是一個使用繁體中文的個人旅行指南庫。每個目的地都應整理成相同且可靠的指南結構：城市定位、推薦景點、在地食物、交通方式、行程範例、實用提醒與資料來源。
 
-The main extensibility rule is simple: **a new destination is normally one new object in `data/destinations.json`, not a new HTML page**. `destination.html?id=<destination-id>` is the shared detail-page template.
+本專案最重要的擴充原則是：**新增目的地通常只需在 `data/destinations.json` 新增一筆物件，不應新增一個 HTML 頁面。** `destination.html?id=<destination-id>` 是所有目的地共用的詳細頁模板。
 
-All agents must read this file before changing the project. Preserve existing user-authored content and keep the site deployable as a static GitHub Pages site.
+所有 AI 代理在修改專案前都必須先閱讀本文件。請保留使用者既有內容，並確保網站持續能以靜態 GitHub Pages 部署。
 
-## 2. Technology and constraints
+## 2. 技術與限制
 
-- HTML5, CSS3, vanilla JavaScript (ES6+), and JSON only.
-- No backend, database, build step, frontend framework, or runtime package dependency.
-- All internal links and assets use relative paths so the site works from a GitHub Pages project subpath.
-- The interface and travel content use Traditional Chinese (`zh-Hant`).
-- Progressive enhancement: core content remains understandable if animation is unavailable.
-- Do not add libraries when the browser platform is sufficient.
-- Do not add accounts, online editing, payments, booking, or data collection unless explicitly requested.
+- 只使用 HTML5、CSS3、原生 JavaScript（ES6+）與 JSON。
+- 不使用後端、資料庫、建置步驟、前端框架或執行階段套件依賴。
+- 所有站內連結與資源都使用相對路徑，確保網站能部署在 GitHub Pages 的專案子路徑。
+- 介面與旅行內容使用繁體中文（`zh-Hant`）。
+- 採用漸進增強：即使動畫無法執行，核心內容仍應可理解與使用。
+- 瀏覽器原生功能足夠時，不得額外加入函式庫。
+- 除非使用者明確要求，否則不得加入帳號、線上編輯、付款、訂房或資料蒐集功能。
 
-## 3. Canonical project structure
+## 3. 標準專案結構
 
 ```text
 .
@@ -37,156 +37,156 @@ All agents must read this file before changing the project. Preserve existing us
 └── tests/validate.mjs
 ```
 
-Keep destination data in the JSON file. Do not duplicate the detail-page markup for individual cities.
+目的地內容必須存放在 JSON 檔案中。不得為個別城市複製詳細頁 HTML。
 
-## 4. Design system
+## 4. 設計系統
 
-### Direction
+### 視覺方向
 
-The visual style is a calm Japanese travel journal: editorial typography, warm paper backgrounds, deep forest green, vermilion accents, generous spacing, asymmetrical photography, and subtle map/route motifs. It should feel curated rather than like a generic dashboard.
+視覺風格是一本文靜的日系旅行誌：編輯式排版、暖色紙張背景、深森林綠、朱紅色點綴、寬裕留白、不對稱攝影，以及低調的地圖與路線元素。整體應有策展感，不能像制式儀表板。
 
-### Tokens
+### 色彩與字體變數
 
-- Paper: `#f3efe6`
-- Warm white: `#fbfaf6`
-- Ink: `#18332c`
-- Muted ink: `#66736d`
-- Forest: `#244d40`
-- Vermilion: `#cf5b3c`
-- Sand: `#d9c9ad`
-- Border: `rgba(24, 51, 44, 0.16)`
-- Display face: Georgia or an available serif fallback.
-- Body face: system sans-serif stack.
+- 紙張色：`#f3efe6`
+- 暖白色：`#fbfaf6`
+- 墨綠色：`#18332c`
+- 淡墨色：`#66736d`
+- 森林綠：`#244d40`
+- 朱紅色：`#cf5b3c`
+- 沙色：`#d9c9ad`
+- 邊框：`rgba(24, 51, 44, 0.16)`
+- 標題字體：Georgia 或可用的襯線字體後備方案。
+- 內文字體：系統無襯線字體組合。
 
-### UI rules
+### 介面規則
 
-- Reuse the existing button, chip, card, and section-heading classes.
-- Minimum body text size is 16px; keep comfortable line height.
-- Visible focus indicators are mandatory.
-- Do not communicate state using color alone.
-- Use semantic headings in order and landmarks (`header`, `nav`, `main`, `footer`).
-- Motion must respect `prefers-reduced-motion`.
-- Desktop layout must adapt at approximately 1024px, 760px, and 480px.
-- At 320px wide, there must be no horizontal scrolling and all controls must remain usable.
-- Destination photos use a 16:10 or taller editorial crop and meaningful alternative text.
+- 重用既有的按鈕、篩選標籤、卡片與區段標題類別。
+- 內文最小字級為 16px，並維持舒適行高。
+- 必須提供清楚可見的鍵盤焦點樣式。
+- 不得只用顏色表示狀態。
+- 標題層級必須符合語意順序，並使用 `header`、`nav`、`main`、`footer` 等地標元素。
+- 動畫必須遵守 `prefers-reduced-motion`。
+- 桌面版約在 1024px、760px 與 480px 斷點調整版面。
+- 在 320px 寬度不得出現水平捲動，所有控制項仍須可操作。
+- 目的地照片使用 16:10 或更直向的編輯式裁切，並提供有意義的替代文字。
 
-## 5. Destination data schema
+## 5. 目的地資料 Schema
 
-`data/destinations.json` is a JSON array. Every object must include all fields below.
+`data/destinations.json` 是 JSON 陣列，每個物件都必須包含以下全部欄位。
 
-| Field | Type / rule |
+| 欄位 | 類型／規則 |
 | --- | --- |
-| `id` | Unique lowercase kebab-case ASCII identifier. Never change after publication. |
-| `city` | Traditional Chinese city name. |
-| `cityEn` | English city name. |
-| `country` | Traditional Chinese country name. |
-| `region` | Region used by filtering; currently `關西`, `九州`, or `關東`. |
-| `theme` | One of `文化古都`, `美食漫遊`, `海港慢旅`, `都會探索`. |
-| `eyebrow` | Short editorial label. |
-| `tagline` | One concise sentence, 12–28 Chinese characters preferred. |
-| `description` | Original overview; 45–100 Chinese characters. |
-| `heroImage` | HTTPS image URL or relative image path. |
-| `imageAlt` | Specific Traditional Chinese image description. |
-| `imageCredit` | Object with non-empty `name` and HTTPS `url`. |
-| `bestFor` | Array of 2–4 short audience labels. |
-| `recommendedDays` | Human-readable duration, e.g. `3–4 天`. |
-| `bestSeason` | Concise seasonal guidance without claiming certainty. |
-| `pace` | Short travel-pace label. |
-| `highlights` | Exactly 3 objects with `name`, `area`, and `description`. |
-| `foods` | Exactly 3 objects with `name` and `note`. |
-| `transport` | Object with `arrival`, `gettingAround`, and `tip`. |
-| `itinerary` | Exactly 3 objects with `day`, `title`, and non-empty `stops` array. |
-| `tips` | Array of 3–5 practical, non-duplicative strings. |
-| `sources` | Array of at least 2 objects with `label` and HTTPS `url`; prefer official tourism or transport sources. |
-| `updatedAt` | ISO date `YYYY-MM-DD`, representing the last content review. |
+| `id` | 唯一、全小寫、ASCII kebab-case 識別碼；發布後不得更改。 |
+| `city` | 繁體中文城市名稱。 |
+| `cityEn` | 英文城市名稱。 |
+| `country` | 繁體中文國家名稱。 |
+| `region` | 篩選使用的地區，目前為 `關西`、`九州` 或 `關東`。 |
+| `theme` | `文化古都`、`美食漫遊`、`海港慢旅`、`都會探索` 其中之一。 |
+| `eyebrow` | 簡短的編輯式標籤。 |
+| `tagline` | 一句精簡標語，建議 12–28 個中文字。 |
+| `description` | 原創城市概述，45–100 個中文字。 |
+| `heroImage` | HTTPS 圖片網址或相對圖片路徑。 |
+| `imageAlt` | 具體的繁體中文圖片描述。 |
+| `imageCredit` | 含非空白 `name` 與 HTTPS `url` 的物件。 |
+| `bestFor` | 2–4 個簡短旅人類型標籤的陣列。 |
+| `recommendedDays` | 可讀的建議天數，例如 `3–4 天`。 |
+| `bestSeason` | 簡潔的季節建議，不得宣稱絕對正確。 |
+| `pace` | 簡短的旅行步調標籤。 |
+| `highlights` | 恰好 3 個物件，每個包含 `name`、`area`、`description`。 |
+| `foods` | 恰好 3 個物件，每個包含 `name`、`note`。 |
+| `transport` | 包含 `arrival`、`gettingAround`、`tip` 的物件。 |
+| `itinerary` | 恰好 3 個物件，每個包含 `day`、`title` 與非空白 `stops` 陣列。 |
+| `tips` | 3–5 個實用且不重複的字串。 |
+| `sources` | 至少 2 個含 `label` 與 HTTPS `url` 的物件；優先使用官方觀光或交通來源。 |
+| `updatedAt` | `YYYY-MM-DD` ISO 日期，代表內容最後檢視日期。 |
 
-### Content integrity
+### 內容完整性
 
-- Use reliable sources, preferably official tourism bureaus, public transport operators, and venue sites.
-- Travel information is time-sensitive. Verify prices, schedules, opening hours, closures, pass coverage, and reservation rules before including them.
-- Prefer durable guidance over brittle exact figures. If an exact figure is necessary, add the review date and source.
-- Do not fabricate personal experience, endorsements, safety guarantees, crowd levels, or accessibility claims.
-- Do not copy long source passages. Summarize in original language and link the source.
-- Do not use placeholder copy, invented statistics, or unlicensed imagery.
-- Describe the sample itinerary as inspiration, not a guaranteed schedule.
+- 使用可靠來源，優先採用官方觀光局、大眾運輸業者與場館網站。
+- 旅行資訊具有時效性。若要加入價格、班次、營業時間、休館、票券範圍或預約規則，必須先查證。
+- 優先使用穩定、不易過期的指引。若必須提供精確數字，需附上檢視日期與來源。
+- 不得捏造個人經驗、背書、安全保證、人潮程度或無障礙資訊。
+- 不得大量複製來源文字；應以原創文字摘要並附上來源連結。
+- 不得使用佔位文字、虛構統計數字或未授權圖片。
+- 行程範例必須標示為靈感提案，不能宣稱為保證可完成的固定行程。
 
-## 6. Homepage behavior
+## 6. 首頁行為
 
-- Load destination cards and counts from `data/destinations.json`; never hard-code the number of destinations.
-- Search is case-insensitive and covers `city`, `cityEn`, `country`, `region`, `theme`, `tagline`, and `bestFor`.
-- Region filters are generated from the JSON data and include an `全部` option.
-- Search, region, and sort controls combine predictably.
-- The result count updates after every filter operation.
-- Empty results show a helpful state and a reset action.
-- Each card links to `destination.html?id=<encoded-id>`.
-- Image failures receive a styled fallback instead of a broken-image icon.
+- 目的地卡片與數量必須由 `data/destinations.json` 載入，不得寫死目的地數量。
+- 搜尋不分英文大小寫，並涵蓋 `city`、`cityEn`、`country`、`region`、`theme`、`tagline`、`bestFor`。
+- 地區篩選由 JSON 資料自動產生，並包含 `全部` 選項。
+- 搜尋、地區與排序控制項必須能穩定組合使用。
+- 每次篩選後都要更新結果數量。
+- 無搜尋結果時顯示友善說明與重設操作。
+- 每張卡片連至 `destination.html?id=<encoded-id>`。
+- 圖片載入失敗時顯示設計過的替代狀態，不能留下破圖圖示。
 
-## 7. Detail-page behavior
+## 7. 詳細頁行為
 
-- Read the `id` query parameter and match it exactly against the JSON data.
-- Render every required guide section from the matching object.
-- Missing or unknown IDs show an accessible not-found state with a link back to the library.
-- JSON/network failures show an accessible error state; do not leave a blank page.
-- Source links open safely with `target="_blank"` and `rel="noreferrer noopener"`.
-- Related destinations are derived from the data rather than hard-coded.
-- Keep the shared template generic; destination-specific conditionals require a documented reason.
+- 讀取網址中的 `id` 查詢參數，並與 JSON 資料進行精確比對。
+- 使用符合的目的地物件渲染所有必要指南區段。
+- 缺少或找不到 `id` 時，顯示可存取的找不到頁面狀態與返回指南庫連結。
+- JSON 或網路載入失敗時顯示可存取的錯誤狀態，不得留下空白頁。
+- 外部來源連結使用 `target="_blank"` 與 `rel="noreferrer noopener"` 安全開啟。
+- 相關目的地必須由資料推導，不得寫死。
+- 共用模板必須保持通用；若需加入特定目的地條件，必須說明原因。
 
-## 8. Standard workflow for adding a destination
+## 8. 新增目的地的標準流程
 
-1. Read `AGENTS.md` and inspect at least one existing JSON object.
-2. Confirm the requested city does not already exist by `id` or city name.
-3. Research current information using at least two reliable sources.
-4. Prepare one complete object conforming to Section 5.
-5. Add only that object to `data/destinations.json`; do not clone `destination.html`.
-6. Run `node tests/validate.mjs`.
-7. Start a local static server and verify:
-   - the card appears on the homepage;
-   - search finds the Chinese and English city names;
-   - the region filter includes and finds the city;
-   - `destination.html?id=<id>` renders every guide section;
-   - an unknown ID shows the not-found state;
-   - keyboard focus and mobile layout remain usable.
-8. Update `docs/extension-verification.md` when the addition is an assignment or acceptance-test demonstration.
-9. Report sources, changed files, and test results.
+1. 閱讀 `AGENTS.md`，並檢查至少一筆既有 JSON 物件。
+2. 以 `id` 與城市名稱確認目的地尚未存在。
+3. 使用至少兩個可靠來源查證最新資訊。
+4. 準備一筆完全符合第 5 節 Schema 的物件。
+5. 只把該物件加入 `data/destinations.json`；不得複製 `destination.html`。
+6. 執行 `node tests/validate.mjs`。
+7. 啟動本機靜態伺服器並確認：
+   - 首頁出現新卡片；
+   - 中文與英文城市名稱都能被搜尋；
+   - 地區篩選包含並能找到該城市；
+   - `destination.html?id=<id>` 能顯示所有指南區段；
+   - 不存在的 ID 會顯示找不到頁面狀態；
+   - 鍵盤焦點與手機版面仍可正常使用。
+8. 若本次新增是作業或驗收測試示範，更新 `docs/extension-verification.md`。
+9. 回報資料來源、變更檔案與測試結果。
 
-Do not create a city-specific HTML file or change unrelated destination objects.
+不得建立城市專屬 HTML，也不得修改無關的既有目的地物件。
 
-## 9. Modification rules
+## 9. 修改規則
 
-- Make the smallest coherent change that satisfies the request.
-- Preserve public IDs and existing URLs.
-- Keep content, presentation, and behavior separated: JSON, CSS, and JavaScript respectively.
-- Prefer reusable rendering helpers over copied markup.
-- Do not silently remove content or weaken tests.
-- Do not commit secrets, tokens, personal data, generated dependency folders, or machine-specific files.
-- Update README when structure, commands, behavior, or deployment changes.
-- If a request conflicts with these rules, explain the conflict and ask before changing the project contract.
+- 只進行能滿足需求的最小且完整變更。
+- 保留公開 `id` 與既有網址。
+- 內容、呈現與行為應分別放在 JSON、CSS 與 JavaScript。
+- 優先使用可重用渲染函式，不得複製標記。
+- 不得未經說明移除內容或弱化測試。
+- 不得提交密鑰、權杖、個人資料、產生的依賴資料夾或特定電腦檔案。
+- 若結構、指令、行為或部署方式變更，必須同步更新 README。
+- 若使用者要求與本規範衝突，先說明衝突並取得同意，再修改專案契約。
 
-## 10. Validation and acceptance criteria
+## 10. 驗證與驗收標準
 
-Every change must satisfy the applicable checks:
+每次變更都必須通過適用的檢查：
 
-- [ ] `node tests/validate.mjs` exits successfully.
-- [ ] JSON parses and every destination satisfies the schema.
-- [ ] IDs are unique and kebab-case.
-- [ ] All internal files referenced by HTML exist.
-- [ ] Homepage renders from JSON; search, filter, sort, reset, and empty state work.
-- [ ] Every destination detail URL renders all required sections.
-- [ ] Invalid IDs and data-load failures have clear error states.
-- [ ] No uncaught browser console errors on the homepage or representative detail page.
-- [ ] Keyboard navigation and visible focus work.
-- [ ] Layout is checked at 320px, 768px, and a desktop width.
-- [ ] Text and controls meet basic contrast and touch-target expectations.
-- [ ] GitHub Pages serves the deployed commit and its public URL returns successfully.
+- [ ] `node tests/validate.mjs` 成功結束。
+- [ ] JSON 可解析，且每個目的地都符合 Schema。
+- [ ] `id` 唯一並符合 kebab-case。
+- [ ] HTML 引用的所有站內檔案都存在。
+- [ ] 首頁由 JSON 渲染；搜尋、篩選、排序、重設與空狀態正常運作。
+- [ ] 每個目的地詳細頁網址都能顯示全部必要區段。
+- [ ] 無效 ID 與資料載入失敗都有清楚錯誤狀態。
+- [ ] 首頁與代表性詳細頁沒有未處理的瀏覽器主控台錯誤。
+- [ ] 鍵盤導覽與可見焦點正常運作。
+- [ ] 已檢查 320px、768px 與桌面寬度版面。
+- [ ] 文字與控制項符合基本對比與觸控目標要求。
+- [ ] GitHub Pages 能提供已部署版本，且公開網址可成功開啟。
 
-## 11. Deployment
+## 11. 部署
 
-- The production branch is `main`.
-- GitHub Pages publishes the `main` branch root; the included GitHub Actions workflow validates the site on every push.
-- Before publishing, confirm `git status`, run validation, and make sure only intended files are committed.
-- After publishing, open both the repository and deployed site URLs. Test at least one destination query URL on the deployed site.
-- Never place credentials in repository files or command output.
+- 正式環境分支為 `main`。
+- GitHub Pages 發布 `main` 分支根目錄；內附的 GitHub Actions 工作流程會在每次推送時驗證網站。
+- 發布前確認 `git status`、執行驗證，並確保只提交預期檔案。
+- 發布後開啟儲存庫與正式網站網址，並至少測試一個目的地查詢網址。
+- 絕對不得將憑證放入儲存庫檔案或指令輸出。
 
-## 12. Definition of done
+## 12. 完成定義
 
-A change is complete only when the content follows the schema, shared templates render it, automated checks pass, representative browser flows work, documentation is current, and the requested deployment state is verified. A plausible-looking page without these checks is not done.
+只有在內容符合 Schema、共用模板能正確渲染、自動檢查通過、代表性瀏覽器流程正常、文件已更新，而且要求的部署狀態已確認時，變更才算完成。只有外觀看似合理、但未完成上述檢查的頁面，不算完成。
