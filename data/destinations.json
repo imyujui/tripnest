@@ -1,0 +1,374 @@
+[
+  {
+    "id": "kyoto",
+    "city": "京都",
+    "cityEn": "Kyoto",
+    "country": "日本",
+    "region": "關西",
+    "theme": "文化古都",
+    "eyebrow": "TEMPLES & QUIET LANES",
+    "tagline": "在千年古都裡，沿著寺院、町家與山風慢慢走。",
+    "description": "京都把歷史放進日常：清晨的朱紅鳥居、午後的寺院庭園、傍晚亮起燈籠的花見小路。與其追趕所有名勝，不如每天選一個區域，用步行與鐵道感受古都細節。",
+    "heroImage": "https://images.unsplash.com/photo-1551106368-d9157e48a3ca?auto=format&fit=crop&q=86&w=1800",
+    "imageAlt": "京都伏見稻荷大社層疊延伸的朱紅鳥居",
+    "imageCredit": {
+      "name": "Nic Y-C / Unsplash",
+      "url": "https://unsplash.com/photos/kyoto-eRNWnwY63Cg"
+    },
+    "bestFor": ["文化散步", "攝影", "慢旅行"],
+    "recommendedDays": "3–4 天",
+    "bestSeason": "春秋熱門，四季皆有風景",
+    "pace": "早出發、分區慢走",
+    "highlights": [
+      {
+        "name": "伏見稻荷大社",
+        "area": "南京都",
+        "description": "沿千本鳥居向稻荷山前行；可依體力選擇短程折返，也能留時間走得更深。"
+      },
+      {
+        "name": "東山與祇園",
+        "area": "東京都",
+        "description": "從清水寺周邊的坡道走向八坂神社，在寺町、町家與傳統街景之間感受京都日常。"
+      },
+      {
+        "name": "嵐山",
+        "area": "西京都",
+        "description": "渡月橋、竹林與山景連成適合步行的一日區域，早晨抵達更能從容探索。"
+      }
+    ],
+    "foods": [
+      {
+        "name": "湯豆腐",
+        "note": "以清淡高湯襯托豆腐風味，適合安排在寺院散步後慢慢品嘗。"
+      },
+      {
+        "name": "京菓子與抹茶",
+        "note": "季節意象常被收進和菓子造型；選一間茶屋休息，也是理解京都美感的方法。"
+      },
+      {
+        "name": "錦市場小食",
+        "note": "能看見京都食材與家常味，但請留意店家規範，避免邊走邊吃造成困擾。"
+      }
+    ],
+    "transport": {
+      "arrival": "以京都站作為主要門戶；從關西其他城市可搭乘 JR 或私鐵，依住宿區域選擇最順路的進城方式。",
+      "gettingAround": "鐵道、地下鐵、市區巴士與步行互相搭配。景點分散，先按東山、西山、北山或南京都分區會更有效率。",
+      "tip": "熱門區域的巴士可能擁擠。官方指南建議優先善用地下鐵與鐵道，再銜接步行或巴士。"
+    },
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "東山的晨光與巷弄",
+        "stops": ["清水寺周邊", "二年坂・三年坂", "八坂神社", "祇園"]
+      },
+      {
+        "day": 2,
+        "title": "鳥居、河岸與市場",
+        "stops": ["伏見稻荷大社", "鴨川", "錦市場", "先斗町"]
+      },
+      {
+        "day": 3,
+        "title": "嵐山的山水節奏",
+        "stops": ["渡月橋", "竹林小徑", "天龍寺周邊", "嵯峨野散步"]
+      }
+    ],
+    "tips": [
+      "將熱門景點安排在清晨，並為移動與排隊保留緩衝時間。",
+      "寺社多為信仰場所，拍照、服裝與動線請遵守現場指示。",
+      "京都街區適合步行，穿著好走的鞋並依季節準備防曬或保暖。",
+      "行程前再次確認寺院拜觀資訊、交通異動與文化活動公告。"
+    ],
+    "sources": [
+      {
+        "label": "Kyoto Travel：Getting Around Kyoto",
+        "url": "https://kyoto.travel/en/getting-around"
+      },
+      {
+        "label": "Kyoto Travel：Fushimi Area",
+        "url": "https://www.kyoto.travel/en/areas/fushimi/"
+      },
+      {
+        "label": "Kyoto Travel：Comfortable Access to Fushimi Inari",
+        "url": "https://kyoto.travel/en/getting-around/comfortable-access-to-fushimi-fushimi-inari-taisha-shrine/"
+      }
+    ],
+    "updatedAt": "2026-11-16"
+  },
+  {
+    "id": "osaka",
+    "city": "大阪",
+    "cityEn": "Osaka",
+    "country": "日本",
+    "region": "關西",
+    "theme": "美食漫遊",
+    "eyebrow": "NEON & STREET FLAVORS",
+    "tagline": "跟著霓虹與香氣，在熱鬧街區吃出大阪性格。",
+    "description": "大阪的魅力很直接：商店街的人聲、河岸霓虹、鐵板上的香氣，總讓旅程自然變得熱鬧。以難波或梅田為軸，把歷史地標、城市展望與在地小吃排進同一天。",
+    "heroImage": "https://images.unsplash.com/photo-1744467229775-4a63f57efd04?auto=format&fit=crop&q=86&w=1800",
+    "imageAlt": "夜晚大阪道頓堀街頭的霓虹招牌與人群",
+    "imageCredit": {
+      "name": "spicykong / Unsplash",
+      "url": "https://unsplash.com/photos/a-crowded-street-full-of-people-izNGyKpF--U"
+    },
+    "bestFor": ["街頭美食", "購物", "夜間散步"],
+    "recommendedDays": "2–3 天",
+    "bestSeason": "春秋舒適，全年皆宜規劃",
+    "pace": "白天探索、夜晚續攤",
+    "highlights": [
+      {
+        "name": "道頓堀",
+        "area": "難波・心齋橋",
+        "description": "巨型招牌、河岸步道與餐廳聚集，是第一次感受大阪熱度最直觀的入口。"
+      },
+      {
+        "name": "大阪城公園",
+        "area": "大阪城",
+        "description": "從寬闊公園看城市歷史與現代天際線交會；入館前先確認官方開館與售票資訊。"
+      },
+      {
+        "name": "新世界",
+        "area": "天王寺",
+        "description": "通天閣周邊保留鮮明的大阪庶民氣息，適合與天王寺、公園或市場安排在同一區。"
+      }
+    ],
+    "foods": [
+      {
+        "name": "章魚燒",
+        "note": "外層與內餡口感各店不同，少量多店比較，比一次吃滿更有樂趣。"
+      },
+      {
+        "name": "大阪燒",
+        "note": "以麵糊、高麗菜與配料在鐵板上完成，是適合坐下來分享的代表性料理。"
+      },
+      {
+        "name": "串炸",
+        "note": "新世界一帶選擇豐富；依店內規則享用醬料，點餐時也可搭配蔬菜平衡口味。"
+      }
+    ],
+    "transport": {
+      "arrival": "新大阪站連接新幹線；從關西機場可依住宿地選擇 JR 或南海電鐵前往大阪市區。",
+      "gettingAround": "大阪 Metro、JR 與私鐵涵蓋主要街區。難波、心齋橋與道頓堀適合步行串聯。",
+      "tip": "大阪站與梅田站周邊路線立體且出口眾多，先記住鐵路公司、線名與出口編號會更安心。"
+    },
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "城市歷史與水岸夜色",
+        "stops": ["大阪城公園", "中之島", "心齋橋", "道頓堀"]
+      },
+      {
+        "day": 2,
+        "title": "市場與庶民美食",
+        "stops": ["黑門市場", "日本橋", "新世界", "天王寺"]
+      },
+      {
+        "day": 3,
+        "title": "梅田的立體城市",
+        "stops": ["大阪站周邊", "梅田街區", "中崎町", "城市展望"]
+      }
+    ],
+    "tips": [
+      "熱門餐廳不一定最適合你的步調，可先準備同區兩到三個備選。",
+      "市場與商店街各店營業日不同，請以店家或官方公告為準。",
+      "末班車與轉乘規則可能調整，夜間行程出發前確認即時交通資訊。",
+      "人潮密集區請留意隨身物品，也避免在狹窄動線停留拍攝。"
+    ],
+    "sources": [
+      {
+        "label": "OSAKA-INFO：Dotonbori",
+        "url": "https://www.osaka-info.jp/en/spot/dotonbori/"
+      },
+      {
+        "label": "OSAKA-INFO：Official Travel Guide",
+        "url": "https://osaka-info.jp/en/"
+      }
+    ],
+    "updatedAt": "2026-11-16"
+  },
+  {
+    "id": "fukuoka",
+    "city": "福岡",
+    "cityEn": "Fukuoka",
+    "country": "日本",
+    "region": "九州",
+    "theme": "海港慢旅",
+    "eyebrow": "COAST & EASY RHYTHM",
+    "tagline": "在海風、公園與屋台之間，享受剛剛好的城市尺度。",
+    "description": "福岡把機場、城市與海靠得很近。白天在大濠公園放慢腳步，午後走進天神與博多，夜裡再到屋台感受街頭溫度；也能留一天前往太宰府展開近郊小旅行。",
+    "heroImage": "https://images.unsplash.com/photo-1605472759650-41559421cef0?auto=format&fit=crop&q=86&w=1800",
+    "imageAlt": "福岡海岸、福岡塔與城市天際線",
+    "imageCredit": {
+      "name": "Johanna / Unsplash",
+      "url": "https://unsplash.com/photos/city-skyline-under-white-clouds-during-daytime-G3jsqs6ARWc"
+    },
+    "bestFor": ["初次九州", "美食", "輕鬆散步"],
+    "recommendedDays": "2–3 天",
+    "bestSeason": "春秋宜步行，夏冬各有風味",
+    "pace": "城市與近郊各留一天",
+    "highlights": [
+      {
+        "name": "大濠公園",
+        "area": "中央區",
+        "description": "寬闊水景與步道讓城市旅行有了呼吸感，可與舞鶴公園或周邊文化設施一起安排。"
+      },
+      {
+        "name": "天神與中洲",
+        "area": "市中心",
+        "description": "商場、地下街、河岸與夜間餐飲集中，從白天逛到晚上也能感受不同城市表情。"
+      },
+      {
+        "name": "太宰府",
+        "area": "近郊",
+        "description": "以太宰府天滿宮周邊為核心的半日或一日散步，適合替城市行程加上一段歷史氣息。"
+      }
+    ],
+    "foods": [
+      {
+        "name": "博多豚骨拉麵",
+        "note": "細麵與濃郁湯頭是代表組合；份量與加麵方式依店家而異。"
+      },
+      {
+        "name": "牛腸鍋",
+        "note": "適合多人共享，常以蔬菜、牛腸與湯底堆疊風味，最後再以麵或飯收尾。"
+      },
+      {
+        "name": "屋台料理",
+        "note": "拉麵、餃子、烤物與家常小菜都可能出現；尊重有限座位與各攤點餐規則。"
+      }
+    ],
+    "transport": {
+      "arrival": "福岡機場與市中心距離近，可搭地下鐵前往博多或天神；博多站也是九州鐵路旅行的重要門戶。",
+      "gettingAround": "市中心以地下鐵、巴士與步行為主。博多、天神與大濠公園可依區域分開探索。",
+      "tip": "前往太宰府等近郊時，先比較從博多或天神出發的路線，依當日行程選擇轉乘較少的方式。"
+    },
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "城市中心與屋台夜色",
+        "stops": ["博多站周邊", "櫛田神社周邊", "天神", "中洲屋台"]
+      },
+      {
+        "day": 2,
+        "title": "公園、海風與城市展望",
+        "stops": ["大濠公園", "舞鶴公園", "百道海濱", "福岡塔周邊"]
+      },
+      {
+        "day": 3,
+        "title": "太宰府近郊散步",
+        "stops": ["太宰府站", "參道", "太宰府天滿宮周邊", "返回天神"]
+      }
+    ],
+    "tips": [
+      "屋台出攤受天候與店家安排影響，不要把單一攤位當成唯一晚餐選項。",
+      "大濠公園與海濱區適合步行，晴天請準備防曬與飲水。",
+      "熱門餐點可能排隊，將用餐時間錯開可保留更彈性的行程。",
+      "近郊交通與設施資訊請在出發前以官方網站再次確認。"
+    ],
+    "sources": [
+      {
+        "label": "VISIT FUKUOKA：Classic One Day Course",
+        "url": "https://www.crossroadfukuoka.jp/en/itineraries/20015"
+      },
+      {
+        "label": "VISIT FUKUOKA：Japanese Garden at Ohori Park",
+        "url": "https://www.crossroadfukuoka.jp/en/spot/12303"
+      }
+    ],
+    "updatedAt": "2026-11-16"
+  },
+  {
+    "id": "tokyo",
+    "city": "東京",
+    "cityEn": "Tokyo",
+    "country": "日本",
+    "region": "關東",
+    "theme": "都會探索",
+    "eyebrow": "OLD SOUL, NEW CITY",
+    "tagline": "在傳統下町與未來街景之間，找到自己的東京節奏。",
+    "description": "東京不是一個景點集合，而是許多個性鮮明的街區拼成的城市。早上走進淺草的傳統街景，午後切換到原宿與澀谷，隔天再從上野、銀座或清澄白河看見另一種日常。",
+    "heroImage": "https://images.unsplash.com/photo-1580058522449-8dcd666afa01?auto=format&fit=crop&q=86&w=1800",
+    "imageAlt": "東京淺草寺與五重塔的傳統建築景色",
+    "imageCredit": {
+      "name": "Walter Cheung / Unsplash",
+      "url": "https://unsplash.com/photos/_hDQgszh-pQ"
+    },
+    "bestFor": ["街區探索", "設計購物", "初次日本"],
+    "recommendedDays": "3–5 天",
+    "bestSeason": "四季皆宜，依主題選擇",
+    "pace": "每天聚焦兩個相鄰街區",
+    "highlights": [
+      {
+        "name": "淺草與隅田川",
+        "area": "東京東側",
+        "description": "從雷門、仲見世通走向淺草寺，再把步伐延伸到隅田川畔，感受傳統街區與水岸風景。"
+      },
+      {
+        "name": "澀谷與原宿",
+        "area": "東京西側",
+        "description": "從明治神宮的林蔭切換到原宿巷弄與澀谷街頭，一天看見東京安靜與高速的兩面。"
+      },
+      {
+        "name": "上野與谷中",
+        "area": "東京北側",
+        "description": "博物館、公園與保留下町氣息的街區彼此相鄰，適合用散步連起文化與日常生活。"
+      }
+    ],
+    "foods": [
+      {
+        "name": "江戶前壽司",
+        "note": "從站立小店到預約餐廳都有選擇；先依預算與用餐步調挑選，不必盲目追逐名店。"
+      },
+      {
+        "name": "蕎麥麵",
+        "note": "冷食或熱食各有風味，是適合穿插在街區行程中的輕巧一餐。"
+      },
+      {
+        "name": "喫茶店甜點",
+        "note": "布丁、咖啡與厚片吐司承載不同年代的東京氣氛，適合在午後留一段坐下來的時間。"
+      }
+    ],
+    "transport": {
+      "arrival": "羽田與成田機場都有鐵路與巴士連接市區。先確認住宿最近的車站，再比較轉乘次數與抵達時段。",
+      "gettingAround": "JR、Tokyo Metro、都營地下鐵與私鐵形成密集路網。以相鄰街區安排同一天，可減少反覆橫跨城市。",
+      "tip": "使用交通 IC 卡可簡化多數搭乘流程；遇到大型車站時，記住路線名稱、出口與目的地街區比只記站名更實用。"
+    },
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "下町傳統與河岸風景",
+        "stops": ["淺草寺", "仲見世周邊", "隅田川", "上野或谷中"]
+      },
+      {
+        "day": 2,
+        "title": "林蔭、時尚與都會夜色",
+        "stops": ["明治神宮", "原宿", "表參道", "澀谷"]
+      },
+      {
+        "day": 3,
+        "title": "市場、建築與城市細節",
+        "stops": ["築地場外周邊", "銀座", "東京站周邊", "丸之內"]
+      }
+    ],
+    "tips": [
+      "不要把相距很遠的熱門區域硬塞進同一天，先用地圖確認街區位置。",
+      "尖峰時段大眾運輸較擁擠，攜帶大型行李時應預留更多移動時間。",
+      "熱門展望台、展覽或體驗可能需要事先預約，請以官方網站最新資訊為準。",
+      "IC 卡、路線與服務範圍可能調整，出發前查看交通業者公告。"
+    ],
+    "sources": [
+      {
+        "label": "GO TOKYO：Asakusa Guide",
+        "url": "https://www.gotokyo.org/en/destinations/eastern-tokyo/asakusa/index.html"
+      },
+      {
+        "label": "GO TOKYO：Tokyo in 3 Days",
+        "url": "https://www.gotokyo.org/en/story/walks-and-tours/best-of-tokyo/index.html"
+      },
+      {
+        "label": "GO TOKYO：Best Things to Do",
+        "url": "https://www.gotokyo.org/en/see-and-do/index.html"
+      }
+    ],
+    "updatedAt": "2026-11-16"
+  }
+]
